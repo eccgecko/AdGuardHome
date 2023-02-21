@@ -1,7 +1,8 @@
 #!/bin/bash                                                                                                                                                                                                                                                     
                                                                                                                                                                                                                                                                 
 # Check if the script is being run as root, and if not, request sudo privileges                                                                                                                                                                                 
-if [ $EUID != 0 ]; then                                                                                                                                                                                                                                         SUDO=sudo
+if [ $EUID != 0 ]; then
+SUDO=sudo
 fi
 
 # Set the name of the tarball we want to download and create a $WORKING_DIRECTORY in the $HOME directory for backups and logs, using the date for backup directory names
