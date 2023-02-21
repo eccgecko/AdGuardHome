@@ -1,6 +1,6 @@
 #!/bin/bash                                                                                                                                                                                                                                                     
                                                                                                                                                                                                                                                                 
-# Check if the script is being run as root, and if not, request sudo privileges                                                                                                                                                                                 
+# Check if the script is being run as root, and if not, request sudo privileges when required                                                                                                                                                                                 
 if [ $EUID != 0 ]; then
 SUDO=sudo
 fi
