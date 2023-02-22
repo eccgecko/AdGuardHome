@@ -13,7 +13,7 @@ fi
 ## !! It must match your $ARCH in the format as they are named on https://github.com/AdguardTeam/AdGuardHome/releases/ !!
 ## !! use 'uname -m' to find out what $ARCH you're running !!
 
-TARBALL="AdGuardHome_linux_arm64.tar.gz"
+TARBALL="AdGuardHome_linux_arm64.tar.gz" # Change here if not running aarch64/arm64
 DATE=$(date +%Y.%m.%d.%H:%M)
 WORKING_DIR="$HOME/my-agh-update"
 LOG="$WORKING_DIR/$DATE-update.log"
