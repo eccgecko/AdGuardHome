@@ -87,9 +87,15 @@ if ! $SUDO cp /tmp/AdGuardHome/AdGuardHome /opt/AdGuardHome/ 2>> "$LOG_DIR/adgua
 fi
 
 # Start the AdGuardHome service
-echo "Starting the AdGuardHome service"
+echo "Starting the AdGuardHome service..."
 if ! $SUDO systemctl start AdGuardHome.service 2>> "$LOG_DIR/adguard-update-$DATE.log" ; then
 	echo "Error: Failed to start AdGuardHome service." >&2
 	exit 1
-		else echo "Done!"
+		else sleep 5 # Wait for service to start up
+		if $SUDO systemctl is-active --quiet AdGuardHome.service; then echo "AdGuardHome service started successfully!"
+		else echo "Error: AdGuardHome service failed to start." >&2
+		exit 1
+		fi
 fi
+
+echo "AdGuardHome update complete!" # Print completion message
