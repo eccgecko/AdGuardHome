@@ -9,7 +9,9 @@ fi
 # using the date for backup directory names. Get latest version number from github and set download url
 #
 #
-# !! Change the name of your architecture at TARBALL variable if $ARCH is different from linux_arm64 !!
+## !! WARNING !! If you are NOT running arm64 then you MUST change the name of the TARBALL variable!
+## !! It must match your $ARCH in the format as they are named on https://github.com/AdguardTeam/AdGuardHome/releases/ !!
+## !! use 'uname -m' to find out what $ARCH you're running !!
 
 TARBALL="AdGuardHome_linux_arm64.tar.gz"
 DATE=$(date +%Y.%m.%d.%H:%M:%S)
