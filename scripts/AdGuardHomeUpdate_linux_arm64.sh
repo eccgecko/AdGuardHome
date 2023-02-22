@@ -14,7 +14,7 @@ fi
 ## !! use 'uname -m' to find out what $ARCH you're running !!
 
 TARBALL="AdGuardHome_linux_arm64.tar.gz"
-DATE=$(date +%Y.%m.%d.%H:%M:%S)
+DATE=$(date +%Y.%m.%d.%H:%M)
 WORKING_DIR="$HOME/my-agh-update"
 LOG_DIR="$WORKING_DIR"
 BACKUP_DIR="$WORKING_DIR/$DATE"
@@ -34,7 +34,7 @@ fi
 
 # Download the latest release of AdGuardHome
 echo "Downloading latest AdGuardHome tarball..."
-if ! wget -q -O "/tmp/$TARBALL" "$DOWNLOAD_URL" 2>> "$LOG_DIR/adguard-update-$DATE.log" ; then
+if ! wget -q -O "/tmp/$TARBALL" "$DOWNLOAD_URL" 2>> "$LOG_DIR/$DATE-update.log" ; then
 	echo "Error: Failed to download AdGuardHome tarball." >&2
 	exit 1
 fi
